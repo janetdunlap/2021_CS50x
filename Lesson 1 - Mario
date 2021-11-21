@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+//uses website ide.cs50.io
+
 int main (void)
 {
 // Get positive integer from user
