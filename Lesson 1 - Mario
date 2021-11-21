@@ -1,1 +1,37 @@
-//testing to see if this saves
+#include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+{
+// Get positive integer from user
+    int height, space;
+    do
+    {
+        height = get_int("Height: \n");
+    }
+//Make sure int is between 1 and 8
+    while (height<1 || height>8);
+
+    for (int i = 0; i < height; i++)
+    {
+        // left half spaces
+        for (int j = 0; j < height -1 - i; j++)
+        {
+            printf(" ");
+        }
+        // left half hashtag
+        for(int j = 0; j < i + 1; j++)
+        {
+            printf("#");
+        }
+        // two spaces between
+        printf ("  ");
+        // right half hashtag
+        for(int j = 0; j < i + 1; j++)
+            printf("#");
+        // return to next line
+        for(int r = 0; r < 1; r++)
+        printf("\n");
+    }
+printf("\n");
+}
