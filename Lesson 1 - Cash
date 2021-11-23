@@ -1,0 +1,87 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <math.h>
+
+//uses website ide.cs50.io
+
+int main (void)
+{
+// Get how much change is owed from user
+    float paid;
+    int change;
+
+    paid = get_float("Enter Amount Paid: ");
+
+    change = round(paid*100);
+
+    if (change <= 0)
+    {
+        printf("Insufficient funds\n");
+    }
+    if (change > 0)
+    {
+        int hundreds, fifties, twenties, tens, ones;
+        hundreds = 0, fifties = 0, twenties = 0, tens = 0, ones = 0;
+        int quarters, dimes, nickels, pennies;
+        quarters = 0, dimes = 0, nickels = 0, pennies = 0;
+
+        while (change >= 10000)
+        {
+            change = change - 10000;
+            hundreds++;
+        }
+        while (change >= 5000)
+        {
+            change = change - 5000;
+            fifties++;
+        }
+        while (change >= 2000)
+        {
+            change = change - 2000;
+            twenties++;
+        }
+        while (change >= 1000)
+        {
+            change = change - 1000;
+            tens++;
+        }
+        while (change >= 100)
+        {
+            change = change - 100;
+            ones++;
+        }
+        while (change >= 25)
+        {
+            change = change - 25;
+            quarters++;
+        }
+        while (change >= 10)
+        {
+            change = change - 10;
+            dimes++;
+        }
+        while (change >= 5)
+        {
+            change = change - 5;
+            nickels++;
+        }
+        while (change >= 1)
+        {
+            change = change - 1;
+            pennies++;
+        }
+
+
+
+    printf(" %d $100\n", hundreds);
+    printf(" %d $50\n", fifties);
+    printf(" %d $20\n", twenties);
+    printf(" %d $10\n", tens);
+    printf(" %d $1\n", ones);
+    printf(" %d $0.25\n", quarters);
+    printf(" %d $0.10\n", dimes);
+    printf(" %d $0.05\n", nickels);
+    printf(" %d $0.01\n", pennies);
+
+    }
+}
